@@ -130,3 +130,6 @@ core
 
 # Project directories
 saved_models
+
+# testing samples
+test_samples
