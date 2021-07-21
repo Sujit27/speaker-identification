@@ -133,3 +133,6 @@ saved_models
 
 # testing samples
 test_samples
+
+# demo 
+demo*

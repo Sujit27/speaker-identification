@@ -5,7 +5,7 @@ from pathlib import Path
 from spectralcluster import SpectralClusterer
 
 #give the file path to your audio file
-audio_file_path = 'test_samples/audio_4854.mp3'
+audio_file_path = 'test_samples/speaker_identification_testing/audio_4854.mp3'
 
 def convert(seconds):
     try:
