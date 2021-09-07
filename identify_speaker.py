@@ -5,8 +5,6 @@ from pathlib import Path
 from spectralcluster import SpectralClusterer
 from resemblyzer import sampling_rate
 
-#give the file path to your audio file
-audio_file_path = 'test_samples/speaker_identification_testing/9986383563_sheik_ienergizer@olacabs.com_2021-08-01-14-44-43.wav'
 
 def convert(seconds):
     try:
@@ -31,7 +29,7 @@ def create_labelling(labels,wav_splits):
 
     return labelling
 
-def main():
+def id_speaker_from_wav(audio_file_path):
     wav_fpath = Path(audio_file_path)
     wav = preprocess_wav(wav_fpath)
     # print(wav.shape)
@@ -54,4 +52,6 @@ def main():
             f.write("{} : {} -> {} \n".format(convert(item[1]),convert(item[2]),item[0]))
 
 if __name__ == "__main__":
-    main()
+    #give the file path to your audio file
+    audio_file_path = 'test_samples/speaker_identification_testing/9986383563_sheik_ienergizer@olacabs.com_2021-08-01-14-44-43.wav'
+    id_speaker_from_wav(audio_file_path)
