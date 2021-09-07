@@ -3,9 +3,10 @@ import time
 from resemblyzer import preprocess_wav, VoiceEncoder
 from pathlib import Path
 from spectralcluster import SpectralClusterer
+from resemblyzer import sampling_rate
 
 #give the file path to your audio file
-audio_file_path = 'test_samples/speaker_identification_testing/audio_4854.mp3'
+audio_file_path = 'test_samples/speaker_identification_testing/9986383563_sheik_ienergizer@olacabs.com_2021-08-01-14-44-43.wav'
 
 def convert(seconds):
     try:
@@ -15,7 +16,6 @@ def convert(seconds):
     return time.strftime(f"%H:%M:%S,{milli}", time.gmtime(seconds))
 
 def create_labelling(labels,wav_splits):
-    from resemblyzer import sampling_rate
     times = [((s.start + s.stop) / 2) / sampling_rate for s in wav_splits]
     labelling = []
     start_time = 0
@@ -36,7 +36,7 @@ def main():
     wav = preprocess_wav(wav_fpath)
     # print(wav.shape)
     encoder = VoiceEncoder("cpu")
-    _, cont_embeds, wav_splits = encoder.embed_utterance(wav, return_partials=True, rate=16)
+    _, cont_embeds, wav_splits = encoder.embed_utterance(wav, return_partials=True, rate=8)
     # print(cont_embeds.shape)
 
     clusterer = SpectralClusterer(
