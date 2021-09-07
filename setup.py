@@ -7,8 +7,8 @@ with open("requirements_package.txt", "r") as f:
     requirements = f.read().splitlines()
 
 setup(
-    name="Resemblyzer",
-    version="0.1.1-dev",
+    name="speaker-identification",
+    version="0.0.1-dev",
     packages=find_packages(),
     package_data={
         "resemblyzer": ["pretrained.pt"]
@@ -20,7 +20,7 @@ setup(
     description="Analyze and compare voices with deep learning",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/resemble-ai/Resemblyzer",
+    url="https://github.com/Sujit27/speaker-identification",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",
